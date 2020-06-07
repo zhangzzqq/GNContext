@@ -1,0 +1,31 @@
+1 创建action
+
+2 创建reducer ,在reducer中绑定action
+
+3 在app 中写绑定reducer中的代码
+const store = createStore(rootReducer)
+    <Provider store={store} >
+
+      </Provider>
+
+4 创建组件
+Books
+
+5
+把这个几个方法写好
+// reducers中的数据 ,然后更新组件
+const mapStateToProps = (state) => ({
+  books: state.bookReducer.books
+
+})
+
+// 给action传值 ,触发action
+const mapDispatchToProps = {
+  dispatchAddBook: (book) => addBook(book)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Books)
+
+
+
+
